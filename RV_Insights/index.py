@@ -12,7 +12,7 @@ login_manager.login_view = '/'
 # ==== layout ==== #
 
 
-dash_app.layout = dbc.Container(
+app.layout = dbc.Container(
 
     [
         dbc.Row(
@@ -34,7 +34,7 @@ def load_user(user_id):
     with app.app_context():
         return db.session.get(MyUsers, int(user_id))
 
-@dash_app.callback(Output('url', 'pathname'),
+@app.callback(Output('url', 'pathname'),
               [
                   Input('login-state','data'),
               ])
@@ -49,7 +49,7 @@ def render_page_content(login_state):
 
 
 
-@dash_app.callback(Output('page-content', 'children'), [Input('url', 'pathname'), State('login-state','data')])
+@app.callback(Output('page-content', 'children'), [Input('url', 'pathname'), State('login-state','data')])
 def render_content(pathname, login_state):
     if pathname == '/':
         return login.render_layout(login_state)
@@ -61,5 +61,5 @@ def render_content(pathname, login_state):
 
 
 if __name__ == "__main__":
-    dash_app.run_server(port=8051, debug=True)
+    app.run_server(port=8051, debug=True)
 

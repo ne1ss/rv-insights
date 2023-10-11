@@ -2,9 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite'
-db = SQLAlchemy(app)
+flask_app = Flask(__name__)
+flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite'
+db = SQLAlchemy(flask_app)
 
 
 class Users(db.Model):
@@ -13,7 +13,7 @@ class Users(db.Model):
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(50))
 
-with app.app_context():
+with flask_app.app_context():
     db.create_all()
 
 
