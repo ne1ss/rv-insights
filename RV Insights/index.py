@@ -2,7 +2,7 @@ from dash import html, dcc
 from dash.dependencies import Input, Output, State
 from flask_login import current_user
 from src.app import *
-from create_database import *
+from src.create_database import *
 import login, advisor_page
 
 login_manager = LoginManager()
