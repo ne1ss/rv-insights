@@ -1,0 +1,20 @@
+
+.row{
+    --bs-gutter-x: 0rem !important;
+}
+
+
+.botbutton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 0px transparent solid;
+}
+
+
+/* Estilo para o título RV Insight */
+.text-primary {
+    color: warning;
+}
+
+
