@@ -40,7 +40,7 @@ def render_layout(message):
     return layout
 
 
-@dash_app.callback(
+@app.callback(
     Output('login-state', 'data'),
     Input('login_button', 'n_clicks'),
     [

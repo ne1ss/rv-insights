@@ -175,7 +175,7 @@ def render_layout():
     return layout
 
 
-@dash_app.callback(
+@app.callback(
     Output('datatable-dinâmica', 'children'),
     Input('input-dinamica-position', 'value')
 )

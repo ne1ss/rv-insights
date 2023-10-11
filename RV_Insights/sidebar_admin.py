@@ -1118,7 +1118,7 @@ def render_layout():
                                 # ======== OPEN MODAL N CLICKS ======== #
 
 
-@dash_app.callback(
+@app.callback(
     [Output('modal-admin', 'is_open'),
      Output('modal-title', 'children'),
      Output('content-modal-admin', 'children')],
@@ -1149,7 +1149,7 @@ def toggle_modal(n1,n2,is_open):
                                 # ======== LAYOUTS ======== #
 
 
-@dash_app.callback(
+@app.callback(
     Output('content-input-pe', 'children'),
     Input('input-text-operação','value')
 )
@@ -1160,7 +1160,7 @@ def render_input_pe_layout(value):
         return PE_dict[value]
 
 
-@dash_app.callback(
+@app.callback(
     Output('content-input-swing', 'children'),
     Input('input-text-operação-swing','value')
 )
@@ -1174,7 +1174,7 @@ def render_input_swing_layout(value):
                                 # ======== SWING TRADE ======== #
 
 
-@dash_app.callback(
+@app.callback(
     Output('output-valor-entrada-swing', 'children'),
     [Input('entrada-swing-input', 'value')]
 )
@@ -1186,7 +1186,7 @@ def render_output_swingTrade_entrada(inputEntrada):
         return f'R${inputEntrada}'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output-valor-stop-swing','children'),
     [Input('stop-swing-input', 'value'),
      Input('entrada-swing-input', 'value')]
@@ -1205,7 +1205,7 @@ def render_output_swingTrade_stop(inputStop, inputEntrada):
             return f'R${inputStop} | {percStop}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output-valor-alvo-swing', 'children'),
     [Input('alvo-swing-input', 'value'),
      Input('entrada-swing-input', 'value')]
@@ -1224,7 +1224,7 @@ def render_output_swingTrade_alvo(inputAlvo, inputEntrada):
             return f'R${inputAlvo} | {percAlvo}%'
 
 
-@dash_app.callback(
+@app.callback(
     [Output('input-drop-ativo-long','value'),
      Output('input-drop-ativo-short','value'),
      Output('switch-button','n_clicks')],
@@ -1242,7 +1242,7 @@ def switch_update(inputShort,inputLong,n_clicks):
                                 # ======== P.E. ======== #
 
 
-@dash_app.callback(
+@app.callback(
     Output('output1', 'children'),
     Input('input1','value')
 )
@@ -1252,7 +1252,7 @@ def render_input_pe1(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output2', 'children'),
     Input('input2','value')
 )
@@ -1262,7 +1262,7 @@ def render_input_pe2(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output3', 'children'),
     Input('input3','value')
 )
@@ -1272,7 +1272,7 @@ def render_input_pe3(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output4', 'children'),
     Input('input4','value')
 )
@@ -1282,7 +1282,7 @@ def render_input_pe4(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output5', 'children'),
     Input('input5','value')
 )
@@ -1292,7 +1292,7 @@ def render_input_pe5(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('output6', 'children'),
     Input('input6','value')
 )
@@ -1301,7 +1301,7 @@ def render_input_pe6(value):
         return ' - %'
     return f'{value}%'
 
-@dash_app.callback(
+@app.callback(
     Output('output7', 'children'),
     Input('input7','value')
 )
@@ -1311,7 +1311,7 @@ def render_input_pe7(value):
     return f'{value}%'
 
 
-@dash_app.callback(
+@app.callback(
     Output('datepicker-output', 'children'),
     Input('datepicker','date')
 )
@@ -1326,7 +1326,7 @@ def render_input_pe_date(value):
 
 
                                 # ======== PARAMS ======== #
-@dash_app.callback(
+@app.callback(
     Output('output1-params', 'children'),
     [Input('input1-params', 'value')]
 )
@@ -1336,7 +1336,7 @@ def render_input_params(value):
     else:
         return f'Monitorar: > {value}%'
 
-@dash_app.callback(
+@app.callback(
     Output('output2-params', 'children'),
     [Input('input2-params', 'value')]
 )
@@ -1346,7 +1346,7 @@ def render_input_params(value):
     else:
         return f'Monitorar: > {value}%'
 
-@dash_app.callback(
+@app.callback(
     Output('output3-params', 'children'),
     [Input('input3-params', 'value')]
 )
@@ -1356,7 +1356,7 @@ def render_input_params(value):
     else:
         return f'Monitorar: > {value}%'
 
-@dash_app.callback(
+@app.callback(
     Output('output4-params', 'children'),
     [Input('input4-params', 'value')]
 )
@@ -1366,7 +1366,7 @@ def render_input_params(value):
     else:
         return f'Monitorar: > {value}%'
 
-@dash_app.callback(
+@app.callback(
     Output('output5-params', 'children'),
     [Input('input5-params', 'value')]
 )

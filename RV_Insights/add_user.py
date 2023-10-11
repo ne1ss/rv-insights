@@ -2,7 +2,7 @@ from src.create_database import *
 from werkzeug.security import generate_password_hash
 import pandas as pd
 
-app_ctx = app.app_context()
+app_ctx = flask_app.app_context()
 app_ctx.push()
 
 logins_df = pd.read_excel('logins.xlsx')

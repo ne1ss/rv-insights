@@ -5,7 +5,7 @@ from src.app import *
 import login, advisor_page
 
 login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager.init_app(flask_app)
 login_manager.login_view = '/'
 
 
@@ -31,7 +31,7 @@ app.layout = dbc.Container(
 
 @login_manager.user_loader
 def load_user(user_id):
-    with app.app_context():
+    with flask_app.app_context():
         return db.session.get(MyUsers, int(user_id))
 
 @app.callback(Output('url', 'pathname'),

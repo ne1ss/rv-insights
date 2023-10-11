@@ -25,7 +25,7 @@ def render_layout():
         ])
     return layout
 
-@dash_app.callback(Output('advisor-content', 'children'), [Input('url', 'pathname')])
+@app.callback(Output('advisor-content', 'children'), [Input('url', 'pathname')])
 def render_advisor_content(pathname):
     if pathname == '/trades':
         return trades.render_layout()

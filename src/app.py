@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 import configparser
 from flask_login import UserMixin, LoginManager
 import os
-from create_database import *
+from src.create_database import *
 
 config = configparser.ConfigParser()
 
