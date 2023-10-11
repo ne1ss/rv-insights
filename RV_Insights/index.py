@@ -61,5 +61,5 @@ def render_content(pathname, login_state):
 
 
 if __name__ == "__main__":
-    app.run_server(port=8051, debug=True)
+    app.run_server(debug=True)
 
